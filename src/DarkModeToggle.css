@@ -1,0 +1,30 @@
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.9s ease-in-out;
+}
+
+.dark-mode-toggle.dark-mode {
+  background-color: #333;
+  box-shadow: none;
+}
+
+.dark-mode-toggle.dark-mode img {
+  transform: rotate(360deg);
+}

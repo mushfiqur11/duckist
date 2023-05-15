@@ -1,0 +1,130 @@
+.homepage-form {
+  margin-bottom: 20px;
+}
+
+.homepage-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.homepage-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  font-size: 16px;
+  color: #333;
+}
+.homepage-form input:focus {
+outline: none;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* .homepage-form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+.homepage-form .login-button {
+display: inline-block;
+padding: 10px 20px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.homepage-form p {
+  margin-top: 10px;
+}
+
+.homepage-form button,
+.homepage-form button:focus {
+  outline: none;
+}
+
+.homepage-form button:hover {
+  background-color: #0056b3;
+}
+  .homepage-form .login-button:hover {
+  background-color: #0056b3;
+  }
+.homepage-form .login-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.homepage-form .login-button-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.homepage-form .login-button-container button:hover {
+  background-color: #0056b3;
+}
+
+
+.signup-button {
+padding: 0;
+background-color: transparent;
+color: #007bff;
+border: none;
+text-decoration: underline;
+cursor: pointer;
+display: inline; /* Add this line */
+appearance: none; /* Add this line */
+-webkit-appearance: none; /* Add this line for Safari */
+-moz-appearance: none; /* Add this line for Firefox */
+}
+
+
+.signup-button:hover {
+color: #0056b3;
+text-decoration: none; /* Add this line to remove underline on hover */
+}
+
+
+.error-message {
+  color: rgb(194, 59, 59);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
