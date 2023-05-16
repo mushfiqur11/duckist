@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/duckist/static/css/main.8badc3b3.css",
-    "main.js": "/duckist/static/js/main.aebac0ff.js",
+    "main.js": "/duckist/static/js/main.b95905e7.js",
     "static/js/787.2cea73ff.chunk.js": "/duckist/static/js/787.2cea73ff.chunk.js",
     "static/media/sun.png": "/duckist/static/media/sun.f794832ad72b90c61eb7.png",
     "static/media/moon.png": "/duckist/static/media/moon.3bea3d398a25611d421b.png",
     "index.html": "/duckist/index.html",
     "main.8badc3b3.css.map": "/duckist/static/css/main.8badc3b3.css.map",
-    "main.aebac0ff.js.map": "/duckist/static/js/main.aebac0ff.js.map",
+    "main.b95905e7.js.map": "/duckist/static/js/main.b95905e7.js.map",
     "787.2cea73ff.chunk.js.map": "/duckist/static/js/787.2cea73ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8badc3b3.css",
-    "static/js/main.aebac0ff.js"
+    "static/js/main.b95905e7.js"
   ]
 }
