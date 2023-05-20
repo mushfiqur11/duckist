@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/duckist/static/css/main.4cef7e3a.css",
-    "main.js": "/duckist/static/js/main.24bcd983.js",
+    "main.js": "/duckist/static/js/main.e1a6c0e1.js",
     "static/js/787.2cea73ff.chunk.js": "/duckist/static/js/787.2cea73ff.chunk.js",
     "static/media/background-bright.jpg": "/duckist/static/media/background-bright.8e9483f7f089dda10c80.jpg",
     "static/media/background-dark.jpg": "/duckist/static/media/background-dark.2f53cc7449fa06139f38.jpg",
@@ -12,11 +12,11 @@
     "static/media/generate-cv-icon.png": "/duckist/static/media/generate-cv-icon.a35429149d2c3df8b741.png",
     "index.html": "/duckist/index.html",
     "main.4cef7e3a.css.map": "/duckist/static/css/main.4cef7e3a.css.map",
-    "main.24bcd983.js.map": "/duckist/static/js/main.24bcd983.js.map",
+    "main.e1a6c0e1.js.map": "/duckist/static/js/main.e1a6c0e1.js.map",
     "787.2cea73ff.chunk.js.map": "/duckist/static/js/787.2cea73ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4cef7e3a.css",
-    "static/js/main.24bcd983.js"
+    "static/js/main.e1a6c0e1.js"
   ]
 }
