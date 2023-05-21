@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import LoggedIn from './LoggedIn';
-import DarkModeToggle from './DarkModeToggle';
 import axios from 'axios';
 import './HomePage.css';
 
@@ -46,18 +45,16 @@ const deleteUser = async (setAccessToken, setIsLoggedIn, setUserInfo) => {
   setIsLoggedIn(false);
   setUserInfo(null);
 }
-const HomePage = () => {
+const HomePage = ({isDarkMode, setCurrentPage, setUserInfo}) => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getUser(accessToken, setAccessToken, setIsLoggedIn, setUserInfo, setIsLoading);
-  }, [accessToken]);
+  }, [accessToken, setUserInfo]);
 
   
 //   console.log(isLoggedIn);
@@ -66,10 +63,6 @@ const HomePage = () => {
 
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
-  };
-
-  const handleToggleMode = () => {
-    setIsDarkMode(prevMode => !prevMode);
   };
 
   const handleLogin = (token) => {
@@ -90,6 +83,7 @@ const HomePage = () => {
     
     <div className={`homepage-container ${isDarkMode ? 'dark-mode-parent' : 'light-mode-parent'}`}>
       <h1>Welcome to the Duckist</h1>
+        
         {isLoading ? (
         <div><h1>Loading ...</h1> </div>
           ) 
@@ -97,10 +91,15 @@ const HomePage = () => {
           (
         isLoggedIn ?  (
           <div>
+            <div className='welcome-text'>
+                <p>
+                    {/* Hello {userInfo.full_name} <span class='tab'></span>  */}
+                <button onClick={handleLogout} className='logout'>Logout</button>
+                </p>
+            </div>
             <LoggedIn
-              handleLogout={handleLogout}
-              userInfo={userInfo}
-              isDarkMode={isDarkMode}
+              // userInfo={userInfo}
+              setCurrentPage={setCurrentPage}
             />
           </div>
         )
@@ -119,7 +118,7 @@ const HomePage = () => {
       </div>)
         )
       }
-      <DarkModeToggle isDarkMode={isDarkMode} onToggle={handleToggleMode} />
+      
     </div>
 
   );

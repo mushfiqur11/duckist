@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import './HomePageForm.css';
 
 
-const BasicInfoForm = ({ userInfo, handleToggle, onLogin }) => {
-    const [full_name, setFullName] = useState('userInfo.full_name');
-    const [pronouns, setPronouns] = useState('userInfo.pronouns');
-    // const [summary, setSummary] = useState(userInfo.summary);
-    // const [bio, setBio] = useState(userInfo.bio);
-    // const [career_role, setCareerRole] = useState(userInfo.career_role);
-    // const [profile_img, setProfileImg] = useState(userInfo.profile_img);
-    // const [cover_img, setCoverImg] = useState(userInfo.cover_img);
-    const [thumb_img, setThumbImg] = useState('userInfo.thumb_img');
+const BasicInfoForm = ({ userInfo }) => {
+    const [full_name, setFullName] = useState(userInfo.full_name);
+    const [pronouns, setPronouns] = useState(userInfo.pronouns);
+    const [summary, setSummary] = useState(userInfo.summary);
+    const [bio, setBio] = useState(userInfo.bio);
+    const [career_role, setCareerRole] = useState(userInfo.career_role);
+    const [profile_img, setProfileImg] = useState(userInfo.profile_img);
+    const [cover_img, setCoverImg] = useState(userInfo.cover_img);
+    const [thumb_img, setThumbImg] = useState(userInfo.thumb_img);
 
     const [accessToken, setAccessToken] = useState(null);
 
@@ -32,7 +32,12 @@ const BasicInfoForm = ({ userInfo, handleToggle, onLogin }) => {
           const data = {
             full_name: full_name,
             pronouns: pronouns,
-            thumb_img: thumb_img
+            summary: summary,
+            bio: bio,
+            career_role: career_role,
+            thumb_img: thumb_img,
+            profile_img: profile_img,
+            cover_img: cover_img
           }
           const filteredData = JSON.stringify(Object.fromEntries(
             Object.entries(data).filter(([_, value]) => value !== "")
@@ -87,11 +92,40 @@ const BasicInfoForm = ({ userInfo, handleToggle, onLogin }) => {
             onChange={(e) => setPronouns(e.target.value)}
             />
             <input
+            type="text"
+            placeholder="Summary"
+            value={summary}
+            onChange={(e) => setSummary(e.target.value)}
+            />
+            <input
+            type="text"
+            placeholder="Bio"
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+            />
+            <input
+            type="text"
+            placeholder="CareerInfo"
+            value={career_role}
+            onChange={(e) => setCareerRole(e.target.value)}
+            />
+            <input
+            type="file"
+            placeholder="Profile Image"
+            accept="image/*"
+            onChange={(e) => setProfileImg(e.target.files[0])}
+            />
+            <input
+            type="file"
+            placeholder="Cover Image"
+            accept="image/*"
+            onChange={(e) => setCoverImg(e.target.files[0])}
+            />
+            <input
             type="file"
             placeholder="Thumb Image"
             accept="image/*"
             onChange={(e) => setThumbImg(e.target.files[0])}
-            
             />
             <br></br>
             <button className="homepage-box-button" type="submit">Save and Continue</button>
