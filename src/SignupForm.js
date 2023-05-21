@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './SignupForm.css'; // Import the CSS file
+// import './SignupForm.css'; // Import the CSS file
+import './HomePageForm.css';
 
 
 
@@ -8,8 +9,9 @@ const SignupForm = ({ handleToggle }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    const [name, setName] = useState('');
+    const [full_name, setFullName] = useState('');
     const [email, setEmail] = useState('');
+    const [errorType, setErrorType] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,22 +23,23 @@ const SignupForm = ({ handleToggle }) => {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              name,
+              full_name,
               email,
               username,
               password
             })
           });
-      
+          const data = await response.json();
           if (response.ok) {
-            const data = await response.json();
             // Successful signup, handle the response data (e.g., display success message)
-            console.log('Signup successful:', data);
-            setErrorMsg('Signup successful:');
+            console.log('Signup successful', data);
+            setErrorMsg(data.detail);
+            setErrorType('success-msg');
           } else {
             // Handle error response (e.g., display an error message)
-            setErrorMsg('Signup failed:');
             console.log('Signup failed');
+            setErrorMsg(data.detail);
+            setErrorType('failure-msg');
           }
         } catch (error) {
           // Handle any network errors
@@ -46,13 +49,13 @@ const SignupForm = ({ handleToggle }) => {
 
     return (
     <div>
-      <h2>Sign Up</h2>
-      <form className="homepage-form" onSubmit={handleSubmit}>
+      <h2 className="homepage-box-form">Sign Up</h2>
+      <form className="homepage-box-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={full_name}
+          onChange={(e) => setFullName(e.target.value)}
           required
         />
         <input
@@ -77,14 +80,14 @@ const SignupForm = ({ handleToggle }) => {
           required
         />
         <br></br>
-        <button type="submit">Sign Up</button>
+        <button className="homepage-box-button" type="submit">Sign Up</button>
       </form>
-      <p>Already have an account? 
-        <button className="login-button" onClick={handleToggle}>
+      <p>Already have an account? <span className='tab'></span>
+        <button className="toggle-text" onClick={handleToggle}>
             Log in
         </button>
         </p>
-    {errorMsg && <p className="error-message">{errorMsg}</p>}
+    {errorMsg && <p className={errorType}>{errorMsg}</p>}
 
     </div>
   );
