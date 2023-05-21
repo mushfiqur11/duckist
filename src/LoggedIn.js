@@ -1,7 +1,7 @@
 import React from 'react';
 // import './LoginForm.css'; // Import the CSS file
 import './HomePageForm.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import cvIcon from './images/generate-cv-icon.png';
 import webIcon from './images/generate-website-icon.png';
 import profileIcon from './images/complete-profile-icon.png';
@@ -9,43 +9,28 @@ import profileIcon from './images/complete-profile-icon.png';
 
 
 
-const LoggedIn = ({ userInfo, handleLogout, isDarkMode }) => {
-    const navigate = useNavigate();
+const LoggedIn = ({ setCurrentPage }) => {
+    // const navigate = useNavigate();
     
     const handleClick = (subPage) => {
         // Handle the click event for each icon
-        if (userInfo){
-            console.log(`Icon ${subPage} clicked`);
-            navigate(`/duckist/${subPage}`, {state: {userInfo, isDarkMode, handleLogout}});    
-        }
-        // Perform any other actions or logic based on the clicked icon
+        setCurrentPage(subPage);
+        
       };
     
     return (
-        // <div>
-        //     <p className=''>Hello {userInfo.full_name} 
-        //         <button onClick={handleLogout} className='toggle-text'>Logout</button>
-        //     </p>
-        // </div>
         <div>
-            
-            <div className='welcome-text'>
-                <p>
-                    {/* Hello {userInfo.full_name} <span class='tab'></span>  */}
-                <button onClick={handleLogout} className='logout'>Logout</button>
-                </p>
-            </div>
             <div className="icon-container">
             
-                <div className="icon" onClick={() => handleClick('complete-profile')}>
+                <div className="icon" onClick={() => handleClick('CompleteProfile')}>
                     <img src={profileIcon} alt="Complete Profile" />
                     <p className="icon-text">Complete Profile</p>
                 </div>
-                <div className="icon" onClick={() => handleClick('generate-website')}>
+                <div className="icon" onClick={() => handleClick('GenerateWebsite')}>
                     <img src={webIcon} alt="Generate Website" />
                     <p className="icon-text">Generate Website</p>
                 </div>
-                <div className="icon" onClick={() => handleClick('generate-resume')}>
+                <div className="icon" onClick={() => handleClick('GenerateResume')}>
                     <img src={cvIcon} alt="Generate Resume" />
                     <p className="icon-text">Generate Resume</p>
                 </div>
